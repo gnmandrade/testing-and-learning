@@ -147,4 +147,10 @@ print(f"Process run in {round(end - start, 2)} seconds(s).")
 ###########
 # Create a class for custom process
 ###########
+# Test the created class
 
+t = my_process.newProcess("New Process 1", 5)
+t.start()
+t.join()
+
+print("Done!!!")
