@@ -41,6 +41,8 @@ This can be found in the second part of the main code.
 Finally, we test this ProcessToolExecutor in a simple image
 processing code, comparing sequential and parallel runs.
 
+Sample images were downloaded from [Pexels](https://www.pexels.com/search/nature/)
+
 ### Pool workarounds
 Several workarounds were tried on the pool functionality, like
 checking that __name__ == '__main__', but the program always got
