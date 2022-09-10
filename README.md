@@ -32,6 +32,15 @@ object.
 
 TODO: Learn how to communicate between processes.
 
+
+In addition to the Process class, the second tutorial also
+exemplified the multiprocessing using the ProcessToolExecutor.
+*This method is reported to be more efficient than the Process
+Class, at least according to the tutorial page*
+This can be found in the second part of the main code.
+Finally, we test this ProcessToolExecutor in a simple image
+processing code, comparing sequential and parallel runs.
+
 ### Pool workarounds
 Several workarounds were tried on the pool functionality, like
 checking that __name__ == '__main__', but the program always got
