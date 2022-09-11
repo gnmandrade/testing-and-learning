@@ -5,7 +5,9 @@ Repository to test pieces of code and learn specific concepts.
 # Contents
 + Dataviz_and_models
 + Tensorflow
-+ Parallel Computing (multiprocessing, ProcessPoolExecuter)
++ Parallel_Computing (multiprocessing, ProcessPoolExecuter)
++ TradingAPI
++ Design_Paterns
 
 
 ## Parallel Computing
@@ -53,3 +55,29 @@ but the program always got stuck.
 
 A solution using Process or ProcessToolExecutor ended up being
 adopted in the end.
+
+
+## Trading API
+This folders contains tests made with trading APIs.
+At the moment, the first tests were done using the Interactive Brokers
+Trader WorkStation (TWS) trial version.
+
+### Interactive Brokers Python API
+The first implemented test code. It pressuposes the installation
+of the IBAPI python package that may be downloaded from their
+website after the creation of a trial account on the
+[Broker's website](https://www.interactivebrokers.ie/en/home.php).
+
+Also relevant might be the
+[API documentation](https://interactivebrokers.github.io/tws-api/initial_setup.html)
+that can be found in their website.
+
+After downloading and impacking, the API is installed using
+pip and the setup.py file that was included in the source folder.
+
+
+
+## Design Paterns
+A sample implementation of each Design Patern present in the folder.
+The directory also contains a more detailled ReadMe file
+with the specifications of each Patern.
