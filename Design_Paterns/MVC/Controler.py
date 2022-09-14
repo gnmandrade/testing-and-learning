@@ -9,7 +9,9 @@ https://openclassrooms.com/en/courses/6900866-write-maintainable-python-code/700
 @author: gnmandrade
 """
 
-class Controller:
+import Model
+
+class Controler:
     def __init__(self, deck, view):
         # Model
         self.players = []
@@ -47,6 +49,8 @@ class Controller:
                 self.deck.add_card(this_card)
         self.deck.shuffle()
     
+    def add_player(self, player_name):
+        self.players.append(Model.Player(player_name))
     
     def run(self):
         while len(self.players) < 5:

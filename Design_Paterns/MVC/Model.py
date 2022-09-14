@@ -53,7 +53,7 @@ class PlayingCard:
         if our_rank < other_rank:
             return False
         
-        other_suit = SUITS[other_card.rank]
+        other_suit = SUITS[other_card.suit]
         our_suit = SUITS[self.suit]
         
         return (our_suit > other_suit)
