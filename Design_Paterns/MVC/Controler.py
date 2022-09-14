@@ -28,18 +28,23 @@ class Controler:
                 player.hand.add_card(next_card)
     
     def evaluate_game(self):
+        best_rank = None
+        best_rank_suit = None
         best_candidate = None
         
         for player in self.players:
-            if best_candidate is None:
-                best_candidate = player
+            this_rank = Model.RANKS[player.hand.card_by_index(0).rank]
+            this_suit = Model.SUITS[player.hand.card_by_index(0).suit]
+            if (best_rank is None
+                or (this_rank > best_rank)
+                or (this_rank == best_rank and this_suit > best_rank_suit)
+                ):
+                best_candidate = player.name
+                best_rank = this_rank
+                best_rank_suit = this_suit
                 continue
-            
-            if player.hand.card_by_index(0).is_better_than(
-                    best_candidate.hand.card_by_index(0)):
-                best_candidate = player
-                
-        return best_candidate.name
+                        
+        return best_candidate
              
     def rebuild_deck(self):
         for player in self.players:

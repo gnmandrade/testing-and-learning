@@ -44,20 +44,6 @@ class PlayingCard:
     def name(self):
         return " ".join([self.rank, "of", self.suit])
     
-    def is_better_than(self, other_card):
-        other_rank = RANKS[other_card.rank]
-        our_rank = RANKS[self.rank]
-        
-        if our_rank > other_rank:
-            return True
-        if our_rank < other_rank:
-            return False
-        
-        other_suit = SUITS[other_card.suit]
-        our_suit = SUITS[self.suit]
-        
-        return (our_suit > other_suit)
-    
 
 class Deck:
     def __init__(self):

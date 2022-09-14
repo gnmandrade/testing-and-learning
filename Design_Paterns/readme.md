@@ -10,6 +10,8 @@ Contents:
 
 ## MVC
 A playing card game based on the MVC patern.
+TODO: Continue to learn SOLID principles.
+[Tutorial](https://openclassrooms.com/en/courses/6900866-write-maintainable-python-code/7010132-o-for-the-open-closed-principle)
 
 # Bibliography
 - Design Paterns Website [SourceMaking](https://sourcemaking.com/design_patterns)
@@ -19,3 +21,4 @@ A playing card game based on the MVC patern.
 - MVC question on [StackOverflow](https://stackoverflow.com/questions/38042632/mvc-the-simplest-example)
 
 - Sample MVC implementation [Card game](https://openclassrooms.com/en/courses/6900866-write-maintainable-python-code/7009312-structure-an-application-with-the-mvc-design-pattern)
+- Apply [SOLID](https://openclassrooms.com/en/courses/6900866-write-maintainable-python-code/7009965-discover-good-programming-practices-with-the-solid-principles) principles to card game
