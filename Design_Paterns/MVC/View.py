@@ -9,7 +9,27 @@ https://openclassrooms.com/en/courses/6900866-write-maintainable-python-code/700
 @author: gnmandrade
 """
 
-class View:
+class InternetStreamingView:
+    def show_player_and_hand(self, player_name, hand):
+        # The code for broadcasting should go here
+        pass
+    
+    def show_winner(self, winner_name):
+        # Full implementation should go in here
+        pass
+    
+    
+class BroadcastView:
+    def show_player_and_hand(self, player_name, hand):
+        # The code for broadcasting should go here
+        pass
+    
+    def show_winner(self, winner_name):
+        # Full implementation should go in here
+        pass
+    
+    
+class PlayerView:
     def prompt_for_new_player(self):
         new_player = input("Type name of player: ")
         if new_player =="":

@@ -12,13 +12,14 @@ https://openclassrooms.com/en/courses/6900866-write-maintainable-python-code/700
 import Model
 
 class Controler:
-    def __init__(self, deck, view, game_evaluator):
+    def __init__(self, deck, player_view, view_1, view_2, game_evaluator):
         # Model
         self.players = []
         self.deck = deck
         
         # View
-        self.view = view
+        self.views = [player_view, view_1, view_2]
+        self.player_dialog = player_view
         
         # Controler
         self.game_evaluator = game_evaluator
@@ -43,26 +44,29 @@ class Controler:
     
     def run(self):
         while len(self.players) < 5:
-            new_player = self.view.prompt_for_new_player()
+            new_player = self.player_dialog.prompt_for_new_player()
             if new_player is None:
                 break
             self.add_player(new_player)
-        
+            
         while True:
             self.start_game()
             
-            for player in self.players:
-                self.view.show_player_and_hand(player.name, player.hand)
-                
-            self.view.prompt_for_flip_cards()
+            for view in self.views:
+                for player in self.players:
+                    view.show_player_and_hand(player.name, player.hand)
+            
+            self.player_dialog.prompt_for_flip_cards()
             for player in self.players:
                 for card in player.hand.cards:
                     card.face_up = True
-                self.view.show_player_and_hand(player.name, player.hand)
-                
-            self.view.show_winner(self.game_evaluator.find_winner(self.players))
+                for view in self.views:
+                    view.show_player_and_hand(player.name, player.hand)
             
-            if not self.view.prompt_for_new_game():
+            for view in self.views:
+                view.show_winner(self.game_evaluator.find_winner(self.players))
+            
+            if not self.player_dialog.prompt_for_new_game():
                 break
             
             self.rebuild_deck()
