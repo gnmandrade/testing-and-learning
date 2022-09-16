@@ -17,6 +17,8 @@ import View
 deck = Model.Deck()
 view = View.View()
 
+gameEvaluator = Controler.HighCardGameEvaluator()
+
 # Create game controler
-gameControler = Controler.Controler(deck, view)
+gameControler = Controler.Controler(deck, view, gameEvaluator )
 gameControler.run()

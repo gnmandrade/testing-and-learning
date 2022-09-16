@@ -12,13 +12,16 @@ https://openclassrooms.com/en/courses/6900866-write-maintainable-python-code/700
 import Model
 
 class Controler:
-    def __init__(self, deck, view):
+    def __init__(self, deck, view, game_evaluator):
         # Model
         self.players = []
         self.deck = deck
         
         # View
         self.view = view
+        
+        # Controler
+        self.game_evaluator = game_evaluator
         
     def start_game(self):
         self.deck.shuffle()
@@ -27,25 +30,6 @@ class Controler:
             if next_card is not None:
                 player.hand.add_card(next_card)
     
-    def evaluate_game(self):
-        best_rank = None
-        best_rank_suit = None
-        best_candidate = None
-        
-        for player in self.players:
-            this_rank = Model.RANKS[player.hand.card_by_index(0).rank]
-            this_suit = Model.SUITS[player.hand.card_by_index(0).suit]
-            if (best_rank is None
-                or (this_rank > best_rank)
-                or (this_rank == best_rank and this_suit > best_rank_suit)
-                ):
-                best_candidate = player.name
-                best_rank = this_rank
-                best_rank_suit = this_suit
-                continue
-                        
-        return best_candidate
-             
     def rebuild_deck(self):
         for player in self.players:
             while player.hand.cards:
@@ -76,9 +60,30 @@ class Controler:
                     card.face_up = True
                 self.view.show_player_and_hand(player.name, player.hand)
                 
-            self.view.show_winner(self.evaluate_game())
+            self.view.show_winner(self.game_evaluator.find_winner(self.players))
             
             if not self.view.prompt_for_new_game():
                 break
             
             self.rebuild_deck()
+            
+            
+class HighCardGameEvaluator:
+    def find_winner(self, players):
+        best_rank = None
+        best_rank_suit = None
+        best_candidate = None
+        
+        for player in players:
+            this_rank = Model.RANKS[player.hand.card_by_index(0).rank]
+            this_suit = Model.SUITS[player.hand.card_by_index(0).suit]
+            if (best_rank is None
+                or (this_rank > best_rank)
+                or (this_rank == best_rank and this_suit > best_rank_suit)
+                ):
+                best_candidate = player.name
+                best_rank = this_rank
+                best_rank_suit = this_suit
+                continue
+                        
+        return best_candidate
