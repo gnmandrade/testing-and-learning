@@ -21,9 +21,10 @@ player_view = View.PlayerView()
 view_1 = View.BroadcastView()
 view_2 = View.InternetStreamingView()
 
+view = View.MultiView(player_view, [view_1, view_2])
 
 gameEvaluator = Controler.HighCardGameEvaluator()
 
 # Create game controler
-gameControler = Controler.Controler(deck, player_view, view_1, view_2, gameEvaluator )
+gameControler = Controler.Controler(deck, view, gameEvaluator )
 gameControler.run()

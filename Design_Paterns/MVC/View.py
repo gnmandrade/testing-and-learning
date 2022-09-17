@@ -9,6 +9,29 @@ https://openclassrooms.com/en/courses/6900866-write-maintainable-python-code/700
 @author: gnmandrade
 """
 
+class MultiView:
+    def __init__(self, player_view, passive_views = []):
+        self.player_interface = player_view
+        self.views = passive_views
+        self.views.append(player_view)
+        
+    def prompt_for_new_player(self):
+        return self.player_interface.prompt_for_new_player()
+    
+    def show_player_and_hand(self, player_name, hand):
+        for view in self.views:
+            view.show_player_and_hand(player_name, hand)
+                
+    def prompt_for_flip_cards(self):
+        return self.player_interface.prompt_for_flip_cards()
+    
+    def show_winner(self, winner_name):
+        for view in self.views:
+            view.show_winner(winner_name)
+        
+    def prompt_for_new_game(self):
+        return self.player_interface.prompt_for_new_game()
+
 class InternetStreamingView:
     def show_player_and_hand(self, player_name, hand):
         # The code for broadcasting should go here
