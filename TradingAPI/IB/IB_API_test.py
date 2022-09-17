@@ -62,6 +62,18 @@ class IBApi(EWrapper, EClient):
     def __init__(self):
         EClient.__init__(self,self)
         
+    # Method to listen for realtime bars
+    def realtimeBar(self, reqID, time, open_, high, low, close, volume, wap, count):
+        super().realtimeBar(reqId, time, open_, high, low, close, volume, wap, count)
+        try:
+            bot.on_bar_update(reqId, time, open_, high, low, close, volume, wap, count)
+        except Exception as e:
+            print(e)
+        
+    def error(self, id, errorCode, errorMsg):
+        print(errorCode)
+        print(errorMsg)
+        
 # Bot Logic
 
 class Bot():
@@ -111,11 +123,14 @@ class Bot():
         #
         # More info for this method available in:
         # https://interactivebrokers.github.io/tws-api/classIBApi_1_1EClient.html#a644a8d918f3108a3817e8672b9782e67
-        self.ib.reqRealTimeBars(0, contract, 5, 'TRADES', 1)
+        self.ib.reqRealTimeBars(0, contract, 5, 'TRADES', 1, [])
     # Put the run in a different thread
     def run_loop(self):
         self.ib.run()
     
+    # Pass realtime bar data back to our bot object
+    def on_bar_update(self, reqId, time, open_, high, low, close, volume, wap, count):
+        print(reqId)
     
 # Start Bot
 bot = Bot()
