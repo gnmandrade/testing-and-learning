@@ -8,6 +8,31 @@ Contents:
 
 - MVC
 
+### SOLID principles
+SOLID is an acronym for good practices that we should follow
+while programing.
+This stands for:
++ S - Single responsability
++ O - Open to extension, Closed for modification
++ L - Liskov substitution principle
+A child class should be able to replace the parent class
+in the code without breaking anything.
++ I - Interface segregation principle
+Single responsability for interfaces
++ D - Dependency Inversion principle
+High-level classes manage the system and should remain as
+stable as possible.
+
+### STUPID principles
+STUPID is also an acronym, but for practices to avoid.
+Each letter stands for:
++ S - Singleton
++ T - Tight Coupling
++ U - Untestability
++ P - Premature Opetimization
++ I - Indescriptive Naming
++ D - Duplication
+
 ## MVC
 A playing card game based on the MVC patern.
 TODO: Continue to learn SOLID principles.
