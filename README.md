@@ -8,6 +8,7 @@ Repository to test pieces of code and learn specific concepts.
 + Parallel_Computing (multiprocessing, ProcessPoolExecuter)
 + TradingAPI
 + Design_Paterns
++ UnitTest
 
 
 ## Parallel Computing
@@ -84,3 +85,12 @@ pip and the setup.py file that was included in the source folder.
 A sample implementation of each Design Patern present in the folder.
 The directory also contains a more detailled ReadMe file
 with the specifications of each Patern.
+At the moment we can find there an implementation of a simple card game
+based on a tutorial that can be found in the local notes.
+
+## UnitTest
+This section has a simple implementation of some functions and a class with
+methods, as well as some tests that could be preformed on them.
+
+The way to execute all the tests simultaneously can be seen in the local
+readme file.
