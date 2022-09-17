@@ -8,18 +8,6 @@ Sample code for using the investing.com API.
 @author: gandrade
 """
 
-# Import Libraries
-import numpy as np
-import pandas as pd
-
-# Data visualization
-import plotly.graph_objs as go
-import plotly.io as pio
-
-pio.renderers.default = "browser"
-#pio.renderers.default = "svg"
-
-
 #######################
 ## investing.com
 #######################

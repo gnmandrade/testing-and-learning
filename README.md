@@ -62,6 +62,9 @@ This folders contains tests made with trading APIs.
 At the moment, the first tests were done using the Interactive Brokers
 Trader WorkStation (TWS) trial version.
 
+It also contains a folder called Market Data, which contains sample
+functions of market data APIs. The current ones are Yahoo Finance and Investing.com
+
 ### Interactive Brokers Python API
 The first implemented test code. It pressuposes the installation
 of the IBAPI python package that may be downloaded from their

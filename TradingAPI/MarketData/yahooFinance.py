@@ -10,16 +10,12 @@ https://towardsdatascience.com/python-how-to-get-live-market-data-less-than-0-1-
 @author: gandrade
 """
 
-# Import Libraries
-import numpy as np
-import pandas as pd
-
 # Data visualization
 import plotly.graph_objs as go
 import plotly.io as pio
 
-pio.renderers.default = "browser"
-#pio.renderers.default = "svg"
+#pio.renderers.default = "browser"
+pio.renderers.default = "svg"
 
 # Import the Yahoo Finance API
 import yfinance as yf
