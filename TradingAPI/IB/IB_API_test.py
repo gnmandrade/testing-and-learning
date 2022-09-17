@@ -85,7 +85,7 @@ class Bot():
         # The run needs to be sent to a different thread
         # Check run_loop method
         #ib.run()
-        ib_thread = threading.Thread(target=self.run_loop, deamon=True)
+        ib_thread = threading.Thread(target=self.run_loop, daemon=True)
         ib_thread.start()
         
         # Sleep to avoid being interrupted by the connect
