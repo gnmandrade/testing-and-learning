@@ -35,8 +35,7 @@ Each letter stands for:
 
 ## MVC
 A playing card game based on the MVC patern.
-TODO: Continue to learn SOLID principles.
-[Tutorial](https://openclassrooms.com/en/courses/6900866-write-maintainable-python-code/7010132-o-for-the-open-closed-principle)
+Learn SOLID principles with the [Tutorial](https://openclassrooms.com/en/courses/6900866-write-maintainable-python-code/7010132-o-for-the-open-closed-principle)
 
 # Bibliography
 - Design Paterns Website [SourceMaking](https://sourcemaking.com/design_patterns)
