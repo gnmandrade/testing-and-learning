@@ -90,7 +90,7 @@ class Bot():
         
         # Sleep to avoid being interrupted by the connect
         # messages
-        time.sleep(3)
+        time.sleep(1)
         
         # Input symbol to trade
         symbol = input("Enter the symbol you want to trade: ")
