@@ -98,3 +98,6 @@ readme file.
 
 ## GUI Tkinter
 Test how to build a GUI using the tkinter package.
+
+We currently only have a button that displays a message when pressed.
+TODO: develop more useful GUIs.
