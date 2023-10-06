@@ -6,8 +6,6 @@ put them in the same orientation and store in a pdf.
 
 import os
 import pathlib
-import PyPDF2
-import img2pdf
 from PIL import Image
 
 files_folder = "/home/your_dir/folder1/folder2"
