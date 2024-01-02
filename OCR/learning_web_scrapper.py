@@ -4,6 +4,8 @@
 Created on Fri Dec 29 11:24:29 2023
 
 A simple web scrapper following an online course.
+The code is based, but not copied from the examples in the
+OpenClassrooms course 'Learn Python Basics'.
 
 @author: gnmandrade
 """
