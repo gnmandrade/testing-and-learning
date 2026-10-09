@@ -8,7 +8,11 @@ import os
 import pathlib
 from PIL import Image
 
-files_folder = "/home/your_dir/folder1/folder2"
+import Config
+
+wdir = Config.wdir
+files_folder = Config.output_path
+output_pdf_path = Config.outpdf_path
 
 list_dir = os.scandir(files_folder)
 
@@ -39,4 +43,4 @@ for item in list_files:
 first_img = list_files_images[0]
 rest_of_img = list_files_images[1:]
 
-first_img.save(files_folder + '/../output.pdf', save_all = True, append_images = rest_of_img)
+first_img.save(output_pdf_path, save_all = True, append_images = rest_of_img)

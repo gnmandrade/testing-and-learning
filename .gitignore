@@ -4,3 +4,6 @@
 # Ignore Pycache files
 *__pycache__*
 
+*Config.py
+.tlvenv/
+InputData/
